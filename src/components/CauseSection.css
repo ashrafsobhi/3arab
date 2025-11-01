@@ -1,0 +1,458 @@
+.cause-section {
+  padding: 100px 2rem;
+  background: linear-gradient(180deg, 
+    rgba(139, 0, 0, 0.95) 0%, 
+    rgba(178, 34, 34, 0.98) 50%,
+    rgba(139, 0, 0, 0.95) 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.cause-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.cause-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 Q60 30 50 50 T50 90 Q40 70 50 50 T50 10' stroke='rgba(85, 107, 47, 0.15)' stroke-width='1.5' fill='none'/%3E%3Cpath d='M50 50 Q45 60 40 55 T30 50' stroke='rgba(85, 107, 47, 0.1)' stroke-width='1' fill='none'/%3E%3Cpath d='M50 50 Q55 60 60 55 T70 50' stroke='rgba(85, 107, 47, 0.1)' stroke-width='1' fill='none'/%3E%3Cpath d='M30 50 Q25 45 20 50' stroke='rgba(107, 142, 35, 0.12)' stroke-width='1' fill='none'/%3E%3Cpath d='M70 50 Q75 45 80 50' stroke='rgba(107, 142, 35, 0.12)' stroke-width='1' fill='none'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 5 Q50 25 40 45 T40 85 Q30 65 40 45 T40 5' stroke='rgba(107, 142, 35, 0.12)' stroke-width='1' fill='none'/%3E%3Cpath d='M40 45 Q35 55 30 50 T20 45' stroke='rgba(85, 107, 47, 0.08)' stroke-width='0.8' fill='none'/%3E%3Cpath d='M40 45 Q45 55 50 50 T60 45' stroke='rgba(85, 107, 47, 0.08)' stroke-width='0.8' fill='none'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(85, 107, 47, 0.03) 15px, rgba(85, 107, 47, 0.03) 30px);
+  background-size: 200px 200px, 150px 150px, 60px 60px;
+  background-position: 0 0, 50px 50px, 0 0;
+  animation: pattern-move 30s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes pattern-move {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(10px, 10px) rotate(2deg);
+  }
+  100% {
+    transform: translate(20px, 20px) rotate(0deg);
+  }
+}
+
+.cause-gradient {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 0, 0, 0.15) 0%,
+    transparent 70%
+  );
+  animation: pulse-red 4s ease-in-out infinite;
+}
+
+@keyframes pulse-red {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+.cause-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cause-header {
+  margin-bottom: 4rem;
+}
+
+.cause-icon-wrapper {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cause-main-icon {
+  font-size: 4.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8));
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+}
+
+.cause-title {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-shadow: 
+    0 0 20px rgba(255, 0, 0, 0.8),
+    0 0 40px rgba(255, 0, 0, 0.5),
+    2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.3;
+}
+
+.cause-accent {
+  color: #ffcccc;
+  text-shadow: 
+    0 0 30px rgba(255, 255, 255, 0.9),
+    0 0 60px rgba(255, 0, 0, 0.8);
+  position: relative;
+  display: inline-block;
+}
+
+.cause-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.8) 50%, 
+    transparent 100%);
+  animation: underline-glow 2s ease-in-out infinite;
+}
+
+@keyframes underline-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scaleX(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.cause-subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cause-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.cause-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 2.5rem;
+  text-align: right;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    inset 0 0 40px rgba(255, 0, 0, 0.1);
+}
+
+.cause-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(255, 0, 0, 0.1) 0%, 
+    rgba(139, 0, 0, 0.15) 50%,
+    rgba(255, 0, 0, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.cause-card:hover::before {
+  opacity: 1;
+}
+
+.cause-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    inset 0 0 60px rgba(255, 0, 0, 0.2),
+    0 0 40px rgba(255, 0, 0, 0.4);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.8));
+  transition: all 0.3s ease;
+}
+
+.cause-card:hover .card-icon {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 0 25px rgba(255, 0, 0, 1));
+}
+
+.card-title {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 
+    0 0 15px rgba(255, 0, 0, 0.8),
+    0 2px 4px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.card-text {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.card-prayer {
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.cause-card:hover .card-prayer {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    inset 0 0 20px rgba(255, 0, 0, 0.3),
+    0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+.prayer-text {
+  font-size: clamp(1.1rem, 2.8vw, 1.3rem);
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 
+    0 0 10px rgba(255, 0, 0, 0.8),
+    0 2px 4px rgba(0, 0, 0, 0.4);
+  display: block;
+}
+
+.cause-message {
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.message-text {
+  font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  font-style: italic;
+  line-height: 2;
+  text-shadow: 
+    0 0 15px rgba(255, 0, 0, 0.6),
+    0 2px 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.message-text::before,
+.message-text::after {
+  content: '"';
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  font-family: serif;
+}
+
+.message-text::before {
+  top: -10px;
+  right: -20px;
+}
+
+.message-text::after {
+  bottom: -30px;
+  left: -20px;
+}
+
+.message-source {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.85);
+  text-align: left;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .cause-section {
+    padding: 60px 1rem;
+    min-height: auto;
+  }
+
+  .cause-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .cause-card {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .card-header {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-icon {
+    font-size: clamp(1.8rem, 4vw, 2rem);
+  }
+
+  .card-title {
+    font-size: clamp(1.2rem, 4.5vw, 1.6rem);
+  }
+
+  .card-text {
+    font-size: clamp(0.85rem, 2.8vw, 1rem);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .card-prayer {
+    padding: 1rem;
+    border-radius: 14px;
+  }
+
+  .prayer-text {
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+  }
+
+  .cause-main-icon {
+    font-size: clamp(3rem, 8vw, 3.5rem);
+  }
+
+  .cause-message {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .message-text {
+    font-size: clamp(1.1rem, 3.8vw, 1.4rem);
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 480px) {
+  .cause-section {
+    padding: 50px 0.75rem;
+  }
+
+  .cause-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .cause-card {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  .card-header {
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-icon {
+    font-size: clamp(1.5rem, 4.5vw, 1.8rem);
+  }
+
+  .card-title {
+    font-size: clamp(1rem, 5vw, 1.4rem);
+  }
+
+  .card-text {
+    font-size: clamp(0.8rem, 3.2vw, 0.95rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .card-prayer {
+    padding: 0.85rem;
+    border-radius: 12px;
+  }
+
+  .prayer-text {
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+  }
+
+  .cause-main-icon {
+    font-size: clamp(2.5rem, 9vw, 3rem);
+  }
+
+  .cause-message {
+    padding: 1.25rem;
+  }
+
+  .message-text {
+    font-size: clamp(1rem, 4.2vw, 1.3rem);
+  }
+}
+
