@@ -45,7 +45,7 @@ const Navbar = () => {
             <a href="#faq" onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}>الأسئلة الشائعة</a>
             <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>إنشاء حساب</a>
             <a 
-              href="https://3arabhack.com/student_login.php" 
+              href="https://adnanalmadani.com/student_login.php" 
               target="_blank" 
               rel="noopener noreferrer"
               className="nav-login-btn"
